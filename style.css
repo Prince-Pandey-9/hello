@@ -1,0 +1,522 @@
+/* ========================================
+   CUSTOMIZATION GUIDE
+   ========================================
+   - Change colors by modifying the CSS variables below
+   - Adjust animation speeds by changing duration values
+   - Modify font sizes in the responsive sections
+   ======================================== */
+
+/* CSS Variables for Easy Theme Customization */
+:root {
+    --primary-pink: #ff69b4;
+    --soft-pink: #ffb6c1;
+    --light-pink: #ffe4e9;
+    --primary-purple: #9b59b6;
+    --soft-purple: #bb77c9;
+    --light-purple: #e8d5f0;
+    --white: #ffffff;
+    --text-dark: #4a4a4a;
+    --text-light: #666666;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--light-purple) 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========================================
+   FLOATING HEARTS AND STARS ANIMATION
+   ======================================== */
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart, .star {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: float 15s infinite ease-in-out;
+}
+
+.heart-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.heart-2 { top: 20%; left: 80%; animation-delay: 2s; }
+.heart-3 { top: 60%; left: 15%; animation-delay: 4s; }
+.heart-4 { top: 70%; left: 85%; animation-delay: 6s; }
+.heart-5 { top: 40%; left: 50%; animation-delay: 8s; }
+
+.star-1 { top: 15%; left: 30%; animation-delay: 1s; }
+.star-2 { top: 35%; left: 70%; animation-delay: 3s; }
+.star-3 { top: 55%; left: 25%; animation-delay: 5s; }
+.star-4 { top: 75%; left: 60%; animation-delay: 7s; }
+.star-5 { top: 85%; left: 40%; animation-delay: 9s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-30px) rotate(10deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-60px) rotate(-10deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(-30px) rotate(5deg);
+        opacity: 0.8;
+    }
+}
+
+/* ========================================
+   WELCOME SCREEN
+   ======================================== */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-purple) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.welcome-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.welcome-content {
+    text-align: center;
+    color: var(--white);
+    padding: 40px;
+    animation: fadeInUp 1s ease;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+.btn-primary, .btn-forgive, .btn-memories, .btn-smile, .btn-secondary {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--primary-pink);
+    font-size: 1.3rem;
+    padding: 18px 50px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-forgive {
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+    color: var(--white);
+    margin: 10px;
+}
+
+.btn-forgive:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 105, 180, 0.4);
+}
+
+.btn-memories {
+    background: linear-gradient(135deg, var(--soft-purple), var(--primary-purple));
+    color: var(--white);
+    margin: 10px;
+}
+
+.btn-memories:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(155, 89, 182, 0.4);
+}
+
+.btn-smile {
+    background: linear-gradient(135deg, var(--soft-pink), var(--primary-pink));
+    color: var(--white);
+    margin: 10px;
+}
+
+.btn-smile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 182, 193, 0.4);
+}
+
+.btn-secondary {
+    background: var(--text-dark);
+    color: var(--white);
+    margin-top: 30px;
+}
+
+.btn-secondary:hover {
+    background: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+.main-content {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.main-content.hidden {
+    display: none;
+}
+
+/* Audio Control */
+.audio-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.audio-btn {
+    background: var(--white);
+    border: 2px solid var(--primary-pink);
+    color: var(--primary-pink);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.audio-btn:hover {
+    background: var(--primary-pink);
+    color: var(--white);
+}
+
+/* ========================================
+   APOLOGY SECTION
+   ======================================== */
+.apology-section {
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.apology-section h2 {
+    text-align: center;
+    color: var(--primary-purple);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.apology-text {
+    background: linear-gradient(135deg, var(--light-pink), var(--light-purple));
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.apology-text p {
+    margin-bottom: 15px;
+}
+
+.apology-text p:last-child {
+    margin-bottom: 0;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ========================================
+   GALLERY SECTION
+   ======================================== */
+.gallery-section {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.5s ease;
+}
+
+.gallery-section.hidden {
+    display: none;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: var(--primary-purple);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================
+   FINAL SECTION
+   ======================================== */
+.final-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+    color: var(--white);
+    margin: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.final-message {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.final-subtext {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   CONFETTI EFFECT
+   ======================================== */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-content p {
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        font-size: 1.1rem;
+        padding: 15px 35px;
+    }
+    
+    .apology-section h2,
+    .gallery-section h2,
+    .final-message {
+        font-size: 1.8rem;
+    }
+    
+    .apology-text {
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .btn-forgive,
+    .btn-memories,
+    .btn-smile {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-item img {
+        height: 150px;
+    }
+    
+    .heart, .star {
+        font-size: 1.5rem;
+    }
+    
+    .apology-section,
+    .gallery-section,
+    .final-section {
+        margin: 20px 10px;
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-content {
+        padding: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-forgive,
+    .btn-memories,
+    .btn-smile {
+        width: 100%;
+        max-width: 280px;
+        margin: 5px 0;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .gallery-item img {
+        height: 120px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+button:focus {
+    outline: 3px solid var(--primary-purple);
+    outline-offset: 2px;
+}
+
+img {
+    alt: "";
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Best Friend ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts and Stars Background -->
+    <div class="background-elements">
+        <div class="heart heart-1">❤️</div>
+        <div class="heart heart-2">💕</div>
+        <div class="heart heart-3">💖</div>
+        <div class="heart heart-4">💗</div>
+        <div class="heart heart-5">💝</div>
+        <div class="star star-1">⭐</div>
+        <div class="star star-2">✨</div>
+        <div class="star star-3">🌟</div>
+        <div class="star star-4">💫</div>
+        <div class="star star-5">⭐</div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <!-- CUSTOMIZE: Change the friend's name here -->
+            <h1>Hey Bestie, Ek Baar Meri Baat Sun Lo ❤️</h1>
+            <p>I have something important to tell you...</p>
+            <button id="open-heart-btn" class="btn-primary">Open My Heart 💌</button>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Audio Control -->
+        <div class="audio-control">
+            <button id="audio-btn" class="audio-btn">🎵 Play Music</button>
+            <audio id="bg-music" loop>
+                <!-- CUSTOMIZE: Replace with your own audio file -->
+                <source src="music/apology-song" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Apology Message Section -->
+        <section class="apology-section">
+            <div class="container">
+                <h2>My Heartfelt Apology 🙏</h2>
+                <!-- CUSTOMIZE: Edit this message with your personal apology -->
+                <div class="apology-text">
+                    <p>Dear Bestie,</p>
+                    <p>I am genuinely sorry for what happened. I know I hurt you, and that was never my intention. Your friendship means everything to me, and I hate seeing you upset.</p>
+                    <p>I understand if you need time and space. I respect your feelings completely. Just know that I'm here for you, whenever you're ready to talk.</p>
+                    <p>You're not just my friend—you're my family. I promise to be more careful and considerate in the future.</p>
+                    <p>Please forgive me? 🥺</p>
+                </div>
+                
+                <!-- Interactive Buttons -->
+                <div class="button-group">
+                    <button id="forgive-btn" class="btn-forgive">Ek Baar Maaf Kar Do 🥺</button>
+                    <button id="memories-btn" class="btn-memories">Our Memories 💖</button>
+                    <button id="smile-btn" class="btn-smile">Ek Smile Please 😊</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="gallery-section" class="gallery-section hidden">
+            <div class="container">
+                <h2>Our Beautiful Memories 💕</h2>
+                <div class="gallery">
+                    <!-- CUSTOMIZE: Replace these placeholder images with your own photos -->
+                    <!-- Place your photos in the images/ folder and update the src paths -->
+                    <div class="gallery-item">
+                        <img src="images/memory1.jpeg" alt="Memory 1" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+1'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory2.jpeg" alt="Memory 2" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+2'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory3.jpeg" alt="Memory 3" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+3'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory4.jpeg" alt="Memory 4" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+4'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory5.jpeg" alt="Memory 5" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+5'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory6.jpeg" alt="Memory 6" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+6'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory7.jpeg" alt="Memory 7" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+7'">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/memory8.jpeg" alt="Memory 8" onerror="this.src='https://via.placeholder.com/300x300?text=Photo+8'">
+                    </div>
+                </div>
+                <button id="close-gallery-btn" class="btn-secondary">Close Gallery ✖️</button>
+            </div>
+        </section>
+
+        <!-- Final Message Section -->
+        <section class="final-section">
+            <div class="container">
+                <h2 class="final-message">Tumhari dosti mere liye bahut special hai ❤️</h2>
+                <p class="final-subtext">Thank you for being in my life 💖</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
